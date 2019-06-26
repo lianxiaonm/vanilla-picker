@@ -1,0 +1,6 @@
+{
+  "solution": "@mini-case/solution-react",
+  "scripts": {
+    "mock": "mica dev --mode mock"
+  }
+}

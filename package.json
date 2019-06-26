@@ -1,0 +1,47 @@
+{
+  "name": "vanilla-picker",
+  "version": "1.0.0",
+  "description": "picker module",
+  "keywords": [
+    "picker",
+    "vanilla"
+  ],
+  "author": "anonymous",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf lib es",
+    "precommit": "lint-staged",
+    "compile": "BABEL_ENV=common babel src -d lib",
+    "lint": "eslint .",
+    "lint:js": "eslint .",
+    "lint:style": "stylelint \"**/*.less\" --syntax less",
+    "prepublishOnly": "npm run build",
+    "example": "cd example && npm run mock"
+  },
+  "devDependencies": {
+    "@mini-case/babel-preset": "1",
+    "@mini-case/eslint-config": "1",
+    "@mini-case/solution-react": "1",
+    "@babel/cli": "7",
+    "@babel/core": "7",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-import": "1",
+    "eslint": "5",
+    "husky": "0.14",
+    "lint-staged": "8",
+    "rimraf": "2",
+    "stylelint": "10",
+    "stylelint-config-standard": "18"
+  },
+  "engines": {
+    "node": ">= 8.10.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  }
+}

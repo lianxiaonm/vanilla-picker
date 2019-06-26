@@ -1,0 +1,3 @@
+{
+  "extends": "@mini-case/eslint-config"
+}

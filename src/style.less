@@ -1,0 +1,63 @@
+.vanilla-picker {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  user-select: none;
+  height: 430px;
+  width: 100%;
+
+  .picker-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 5%, #fff 20%, #fff 80%, transparent 95%, transparent);
+  }
+
+  .picker-ul-wrapper,
+  .picker-rule {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    margin-top: -45px;
+  }
+
+
+  .picker-rule {
+    z-index: 2;
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .picker-ul-wrapper {
+    z-index: 1;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0) rotateX(0);
+
+    > li {
+      width: 100%;
+      height: 100%;
+      color: #bbb;
+      position: absolute;
+      text-align: center;
+      vertical-align: middle;
+      backface-visibility: hidden;
+      font-size: 32px;
+      padding: 0 18px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: default;
+      visibility: hidden;
+      will-change: transform;
+
+      &.visible { visibility: visible; }
+
+      &.highlight { visibility: visible; color: #333; }
+    }
+  }
+}
